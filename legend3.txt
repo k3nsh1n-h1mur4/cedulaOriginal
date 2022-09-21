@@ -1,0 +1,56 @@
+self.write_html("""<p style="center"><B>Sindicato Nacional de Trabajadores del Seguro Social</B>, con domicilio <B>en calle Zamora 107, colonia Condesa, Alcaldía
+                                Cuauhtémoc, C.P. 06140, Ciudad de México</B>, en cumplimiento a los artículos 2, fracción II, 3 fracción 6,7,8,12,4,15 y
+                                demás relativos de la Ley Federal de Protección de datos Personales en Poseción de los Particulares, su Reglamento y
+                                Lineamientos; es el <B>responsable</B> de la obtención, uso, divulgación o almacenamiento y protección de sus datos
+                                personales, y al respecto le informo lo siguiente:
+                                Los datos personales que recabamos de Usted en la cédula de afiliación, los utilizaremos para las siguientes
+                                finalidades que son necesarias para el desarrollo de las actividades que nuestro marco estatutario establece:
+                                <B>Dar cumplimiento a la fracción X del artículo 13 que se refiere a informar al secretario del Interior y propaganda: el
+                                domicilio o cambio de él así como los datos previstos en los padrones.
+                                Cumplir con la fracción IV del artículo 77 que señala que la Secretaría del Interior y Propaganda debe contar con el
+                                registro de los miembros del Sindicato (nombre completo, fecha y lugar de nacimiento, estado civil, domicilio, 
+                                categoría y sueldo, fecha de ingreso al trabajo y al Sindicato) para mantener al corriente el padrón de miembros.</B></p>
+                                <br>
+                                <br>
+
+                                <p style="justify"><B>Actualización de base de datos electrónicos.</B>
+                                De manera adicional, utilizaremos su información personal para las siguientes finalidades que no son necesarias para
+                                el servicio que otorgamos, pero que nos permiten y facilitan brindarle una mejor atención:
+                                <B>Análisis estadísticos en el marco de la planeación de actividades sindicales.</B></p>
+                                <br>
+                                <br>
+
+                                <B>TRANSFERENCIA DE DATOS PERSONALES.</B>
+                                Conforme a las actividades propias y con el objetivo de cumplir con la finalidades mencionadas, se podrán transferir
+                                algunos de sus datos personales a terceros tales como:
+                                INSTITUTO MEXICANO DEL SEGURO SOCIAL, SECRETARÍA DEL TRABAJO Y PREVISIÓN SOCIAL (DIRECCIÓN GENERAL DE
+                                REGISTRO DE ASOCIACIONES); CENTRO FEDERAL DE CONCILIACIÓN Y REGISTRO LABORAL; AUTORIDADES LABORALES,
+                                ADMINISTRATIVAS O JUDICIALES COMPETENTES; INAI).
+                                Quienes se encontrarán obligados a darle a conocer su propio Aviso de Privacidad; lo anterior a fin de evitar daño,
+                                pérdida, destrucción, alteración o un tratamiento no autorizado de sus datos personales.
+                                En caso de que no desee que sus datos personales sean tratados para estos fines adicionales, desde este momento
+                                usted nos puede comunicar lo anterior mediante <B>oficio dirigido a la Undiad de Transparencia del S.N.T.S.S. o la
+                                Secretaria del interior y Propaganda del Cómite Ejecutivo Nacional</B>, acompañando <B>los siguientes datos:</B> Nombre del
+                                titular, matrícula, adscripción, domicilio, correo electrónico y la descripción exacta de los datos personales
+                                adicionales que menciona.
+                                <br>
+                                <br>
+
+                                Los <B>Derechos</B> ARCO Acceso, Rectificación, Cancelación u oposición podrán ser ejercidos por el titular, previa
+                                acreditación de su identidad, mediante <B>oficio dirigido a la Unidad de Transparencia del S.N.T.S.S. a la Secretaría del 
+                                Interior y Propaganda del Cómite Ejecutivo Nacional</B> o través del adirección del correo electrónico
+                                transparencia.sntss@hotmail.com, debiendo adjuntar copia de su identificación oficial vigente (INE, pasaporte,
+                                Cédula Profesional o Cartilla Militar) o través del Representante legal del titular previa acreditación, la identidad del
+                                representante y la acreditación de la representación, mediante instrumento notarial, carta poder firmada por el
+                                titular y ante la presencia de dos testigos o mediante declaración en comparecencia personal del titular y
+                                acompañando los datos del párrafo anterior.
+                                En caso de ejecer el derecho de <B> Rectificación</B> de sus datos personales, deberá de indicar la corrección o actualización
+                                que requiera se modifiquen, debiendo de aportar los documentos probatorios para sustentar la solicitud. Así mismo
+                                le informamos que no se transfieren a terceros sus datos personales recabados en esta cédula.
+                                <br>
+                                <br>
+
+                                Para mayor información, sobre los términos y condiciones en que serán tratados sus datos personales, así como la
+                                actualización de este aviso y la forma en que podrá ejercer sus derechos (ARCO), puede consultar el aviso de 
+                                privacidad integral en <U>www.sntss.org.mx/transparencia.</U>
+                                """)

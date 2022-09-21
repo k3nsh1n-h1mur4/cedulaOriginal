@@ -1,0 +1,863 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	{{ title }}
+{% endblock %}
+
+{% block content %}
+	
+	<div class="container" id="error">
+		<div class="row">
+			<div class="col">
+				{% if error %}
+				
+					{{ error }}	
+
+				{% endif %}			
+			</div>
+		</div>
+	</div>
+	
+
+<div class="container">
+<div class="title">
+	<div class="img-container">
+		<img src="{{ url_for('static', filename='./sntsslogo.png') }}" alt="sntsslogo" width="120px" height="120px">
+	</div>
+	<div class="main-title">
+		<h2>Sindicato Nacional de Trabajadores del Seguro Social</h2>
+		<h4>CÉDULA DE AFILIACIÓN</h4>
+		<p>Por medio de la presente vengo a manifestar mi adhesión y afiliación como socio del Sindicato Nacional de</p>
+		<p>Trabajadores del Seguro Social (S.N.T.S.S.) a partir de la fecha de mi contratación en el Instituto Mexicano</p>
+		<p>del Seguro Social proporcinando los siguientes datos personales en términos de lo dispuesto por el artículo</p>
+		<p>5 del estatuto vigente del Sindicato Nacional de Trabajadores del Seguro Social (S.N.T.S.S.):</p>
+	</div>
+</div>
+</div>
+
+
+	<div class="container mt-5">
+		<form action="" method="POST" class="formMain">
+			<div class="first">
+				<p><strong>DATOS PERSONALES</strong></p>
+				<div class="form-group">
+					<label for="app">Apellido Paterno</label>
+					<input type="text" name="app"> 	
+				</div>
+				<div class="form-group">
+					<label for="apm">Apellido Materno</label>
+					<input type="text" name="apm"> 
+				</div>
+				<div class="form-group">
+					<label for="name">Nombre(s)</label>
+					<input type="text" name="name">
+				</div>
+				<div class="form-group">
+					<label for="dom">Domicilio</label>
+					<input type="text" name="dom"> 
+				</div>
+				<div class="form-group">
+					<label for="col">Colonia</label>
+					<input type="text" name="col" >
+				</div>
+				<div class="form-group">
+					<label for="mcpio">Municipio</label>
+					<input type="text" name="mcpio">
+				</div>
+				<div class="form-group">
+					<label for="cp">Código Postal</label>
+					<input type="text" name="cp" >
+				</div>
+				<div class="form-group">
+					<label for="local">Localidad</label>
+					<input type="text" name="local" >
+				</div>
+				<div class="form-group">
+					<label for="cel">Tel. Célular</label>
+					<input type="text" name="cel" >
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="text" name="email" >
+				</div>
+				<div class="form-group">
+					<label for="l_nac">Lugar Nacimiento</label>
+					<input type="text" name="l_nac" >
+				</div>
+				<div class="form-group">
+					<label for="f_nac">Fecha Nacimiento</label>
+					<input type="date" name="f_nac" >
+				</div>
+				<div class="form-group">
+					<label for="nss">Número Seguro Social</label>
+					<input type="text" name="nss">
+				</div>
+				<div class="form-group">
+					<label for="rfc">RFC</label>
+					<input type="text" name="rfc"/>
+				</div>
+				<div class="form-group">
+					<label for="curp">CURP</label>
+					<input type="text" name="curp"/>
+				</div>
+				<div class="form-group">
+					<label for="edo_civil">Estado Civil</label>
+					<select name="edo_civil" id="">
+						<option value="CASADO">CASADO</option>
+						<option value="DIVORCIADO">DIVORCIADO</option>
+						<option value="SOLTERO">SOLTERO</option>
+						<option value="UNIÓN_LIBRE">UNIÓN LIBRE</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="sexo">Sexo</label>
+					<select name="sexo" id="">
+						<option value="FEMENINO">FEMENINO</option>
+						<option value="MASCULINO">MASCULINO</option>
+					</select>
+				</div>
+			</div>
+		
+		<div class="container mt-5">
+			<p><strong>DATOS LABORALES</strong> </p>
+			<div class="second">
+				<div class="form-group">
+					<label for="matricula">Matrícula</label>
+					<input type="text" name="matricula" >
+				</div>
+				<div class="form-group">
+					<label for="catergoria">Categoría</label>
+					<select name="categoria" id="" class="listCat">
+						<option value="ABOGADO">ABOGADO</option>
+						<option value="ACTUARIO SOCIAL MATEMÁTICO">ACTUARIO SOCIAL MATEMÁTICO</option>
+						<option value="ARQUITECTO">ARQUITECTO</option>
+						<option value="ASISTENTE ADMINISTRATIVO DE GUARDERÍA">ASISTENTE ADMINISTRATIVO DE GUARDERÍA</option>
+						<option value="ASISTENTE DE BIBLIOTECARIO">ASISTENTE DE BIBLIOTECARIO</option>
+						<option value="ASISTENTE DE GUARDERÍA">ASISTENTE DE GUARDERÍA</option>
+						<option value="ASISTENTES MÉDICAS">ASISTENTES MÉDICAS</option>
+						<option value="AUXILIAR DE ADMINISTRACIÓN DE CENTROS VACACIONALES">AUXILIAR DE ADMINISTRACIÓN DE CENTROS VACACIONALES</option>
+						<option value="AUXILIAR DE ADMINISTRACIÓN DE UNIDAD MÉDICA">AUXILIAR DE ADMINISTRACIÓN DE UNIDAD MÉDICA</option>
+						<option value="AUXILIAR DE ADMINISTRACIÓN EN HOSPITAL RURAL">AUXILIAR DE ADMINISTRACIÓN EN HOSPITAL RURAL</option>
+						<option value="AUXILIAR DE ADMINISTRACIÓN EN UNIDAD MÉDICA DE CAMPO">AUXILIAR DE ADMINISTRACIÓN EN UNIDAD MÉDICA DE CAMPO</option>
+						<option value="AUXILIAR DE ADMINISTRACIÓN EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO">AUXILIAR DE ADMINISTRACIÓN EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO</option>
+						<option value="AUXILIAR DE ALMACÉN">AUXILIAR DE ALMACÉN</option>
+						<option value="AUXILIAR DE ÁREA MÉDICA EN UNIDAD MÉDICA DE CAMPO">AUXILIAR DE ÁREA MÉDICA EN UNIDAD MÉDICA DE CAMPO</option>
+						<option value="AUXILIAR DE ÁREA MÉDICA EN UNIDAD MÉDICA DE CAMPO">AUXILIAR DE ÁREA MÉDICA EN UNIDAD MÉDICA DE CAMPO</option>
+						<option value="AUXILIAR DE ATENCIÓN MÉDICA DE CENTROS VACACIONALES">AUXILIAR DE ATENCIÓN MÉDICA DE CENTROS VACACIONALES</option>
+						<option value="AUXILIAR DE ATENCIÓN MÉDICA EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO">AUXILIAR DE ATENCIÓN MÉDICA EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO</option>
+						<option value="AUXILIAR DE ENFERMERA GENERAL EN UNIDAD MÉDICA RURAL">AUXILIAR DE ENFERMERA GENERAL EN UNIDAD MÉDICA RURAL</option>
+						<option value="AUXILIAR DE ENFERMERÍA DE UNIDAD MÉDICA">AUXILIAR DE ENFERMERÍA DE UNIDAD MÉDICA</option>
+						<option value="AUXILIAR DE ENFERMERÍA EN SALUD PÚBLICA">AUXILIAR DE ENFERMERÍA EN SALUD PÚBLICA</option>
+						<option value="AUXILIAR DE ENFERMERÍA GENERAL EN HR">AUXILIAR DE ENFERMERÍA GENERAL EN HR</option>
+						<option value="AUXILIAR DE ENFERMERÍA GENERAL">AUXILIAR DE ENFERMERÍA GENERAL</option>
+						<option value="AUXILIAR DE FARMACIA">AUXILIAR DE FARMACIA</option>
+						<option value="AUXILIAR DE HOSPEDAJE DE CENTROS VACACIONALES">AUXILIAR DE HOSPEDAJE DE CENTROS VACACIONALES</option>
+						<option value="AUXILIAR DE LABORATORIO EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO">AUXILIAR DE LABORATORIO EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO</option>
+						<option value="AUXILIAR DE LABORATORIO">AUXILIAR DE LABORATORIO</option>
+						<option value="AUXILIAR DE LIMPIEZA E HIGIENE EN UNIDADES MÉDICAS Y NO MÉDICAS">AUXILIAR DE LIMPIEZA E HIGIENE EN UNIDADES MÉDICAS Y NO MÉDICAS</option>
+						<option value="AUXILIAR DE LIMPIEZA Y COCINA DE UNIDAD MÉDICA">AUXILIAR DE LIMPIEZA Y COCINA DE UNIDAD MÉDICA</option>
+						<option value="AUXILIAR DE OPERACIÓN CONTABLE DE CENTROS VACACIONALES">AUXILIAR DE OPERACIÓN CONTABLE DE CENTROS VACACIONALES</option>
+						<option value="AUXILIAR DE ORIENTADOR TÉCNICO MÉDICO">AUXILIAR DE ORIENTADOR TÉCNICO MÉDICO</option>
+						<option value="AUXILIAR DE SERVICIOS ADMINISTRATIVOS">AUXILIAR DE SERVICIOS ADMINISTRATIVOS</option>
+						<option value="AUXILIAR DE SERVICIOS DE INTENDENCIA">AUXILIAR DE SERVICIOS DE INTENDENCIA</option>
+						<option value="AUXILIAR DE SERVICIOS GENERALES DE UNIDAD MÉDICA">AUXILIAR DE SERVICIOS GENERALES DE UNIDAD MÉDICA</option>
+						<option value="AUXILIAR DE SERVICIOS GENERALES EN HOSPITAL RURAL">AUXILIAR DE SERVICIOS GENERALES EN HOSPITAL RURAL</option>
+						<option value="AUXILIAR DE SERVICIOS GENERALES EN UNIDAD MÉDICA DE CAMPO">AUXILIAR DE SERVICIOS GENERALES EN UNIDAD MÉDICA DE CAMPO</option>
+						<option value="AUXILIAR DE SERVICIOS GENERALES EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO">AUXILIAR DE SERVICIOS GENERALES EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO</option>
+						<option value="AUXILIAR DE SOPORTE TÉCNICO EN INFORMÁTICA">AUXILIAR DE SOPORTE TÉCNICO EN INFORMÁTICA</option>
+						<option value="AUXILIAR DE TRABAJO SOCIAL">AUXILIAR DE TRABAJO SOCIAL</option>
+						<option value="AUXILIAR DE VELATORIO">AUXILIAR DE VELATORIO</option>
+						<option value="AUXILIAR TÉCNICO DE ACTUARIADO SOCIAL">AUXILIAR TÉCNICO DE ACTUARIADO SOCIAL</option>
+						<option value="AUXILIAR TÉCNICO EN SERVICIOS DE DIETOLOGÍA">AUXILIAR TÉCNICO EN SERVICIOS DE DIETOLOGÍA</option>
+						<option value="AUXILIAR UNIVERSAL DE OFICINAS">AUXILIAR UNIVERSAL DE OFICINAS</option>
+						<option value="AYUDANTE DE AUTOPSIAS">AYUDANTE DE AUTOPSIAS</option>
+						<option value="AYUDANTE DE CAJERO A">AYUDANTE DE CAJERO A</option>
+						<option value="AYUDANTE DE CAJERO B">AYUDANTE DE CAJERO B</option>
+						<option value="AYUDANTE DE EMBALSAMAMIENTO">AYUDANTE DE EMBALSAMAMIENTO</option>
+						<option value="AYUDANTE DE FARMACIA">AYUDANTE DE FARMACIA</option>
+						<option value="AYUDANTE DE LIMPIEZA E HIGIENE EN UNIDADES MÉDICAS Y NO MÉDICAS">AYUDANTE DE LIMPIEZA E HIGIENE EN UNIDADES MÉDICAS Y NO MÉDICAS</option>
+						<option value="AYUDANTE DE SERVICIOS DE INTENDENCIA">AYUDANTE DE SERVICIOS DE INTENDENCIA</option>
+						<option value="BIBLIOTECARIO">BIBLIOTECARIO</option>
+						<option value="BIÓLOGO">BIÓLOGO</option>
+						<option value="CAJERA EN TIENDAS">CAJERA EN TIENDAS</option>
+						<option value="CAJERO B">CAJERO B</option>
+						<option value="CAJERO C">CAJERO C</option>
+						<option value="CAJERO D">CAJERO D</option>
+						<option value="CAMILLERO EN UNIDADES HOSPITALARIAS">CAMILLERO EN UNIDADES HOSPITALARIAS</option>
+						<option value="CAMILLERO EN VEHÍCULOS DE SERVICIOS ORDINARIOS Y PROGRAMADOS">CAMILLERO EN VEHÍCULOS DE SERVICIOS ORDINARIOS Y PROGRAMADOS</option>
+						<option value="CHOFER">CHOFER</option>
+						<option value="CIRUJANO MÁXILO FACIAL">CIRUJANO MÁXILO FACIAL</option>
+						<option value="CITOTECNÓLOGO EN HOSPITAL RURAL">CITOTECNÓLOGO EN HOSPITAL RURAL</option>
+						<option value="CITOTECNÓLOGO">CITOTECNÓLOGO</option>
+						<option value="COCINERO TÉCNICO 1º DE LOS SERVICIOS DE NUTRICIÓN Y DIETÉTICA">COCINERO TÉCNICO 1º DE LOS SERVICIOS DE NUTRICIÓN Y DIETÉTICA</option>
+						<option value="COCINERO TÉCNICO 2º DE LOS SERVICIOS DE NUTRICIÓN Y DIETÉTICA">COCINERO TÉCNICO 2º DE LOS SERVICIOS DE NUTRICIÓN Y DIETÉTICA</option>
+						<option value="CONTADOR">CONTADOR</option>
+						<option value="CONTROLADOR DE VEHÍCULOS">CONTROLADOR DE VEHÍCULOS</option>
+						<option value="COORDINADOR DE ALMACÉN">COORDINADOR DE ALMACÉN</option>
+						<option value="COORDINADOR DE CONTABILIDAD">COORDINADOR DE CONTABILIDAD</option>
+						<option value="COORDINADOR DE ESTADÍSTICA">COORDINADOR DE ESTADÍSTICA</option>
+						<option value="COORDINADOR DE FARMACIA">COORDINADOR DE FARMACIA</option>
+						<option value="COORDINADOR DE OPERADORES DE TELEX Y TELEGRÁFICOS">COORDINADOR DE OPERADORES DE TELEX Y TELEGRÁFICOS</option>
+						<option value="COORDINADOR DE OPERADORES TELEFÓNICOS">COORDINADOR DE OPERADORES TELEFÓNICOS</option>
+						<option value="COORDINADOR DE PERSONAL">COORDINADOR DE PERSONAL</option>
+						<option value="COORDINADOR DE PROCESAMIENTO DE DATOS">COORDINADOR DE PROCESAMIENTO DE DATOS</option>
+						<option value="COORDINADOR DE SERVICIOS ADMINISTRATIVOS">COORDINADOR DE SERVICIOS ADMINISTRATIVOS</option>
+						<option value="COORDINADOR DE SERVICIOS TÉCNICOS">COORDINADOR DE SERVICIOS TÉCNICOS</option>
+						<option value="COORDINADOR DE SOPORTE TÉCNICO EN INFORMÁTICA">COORDINADOR DE SOPORTE TÉCNICO EN INFORMÁTICA</option>
+						<option value="COORDINADOR DE TESORERÍA">COORDINADOR DE TESORERÍA</option>
+						<option value="COORDINADORA DE ASISTENTES MÉDICAS">COORDINADORA DE ASISTENTES MÉDICAS</option>
+						<option value="CUIDADOR DE ANIMALES DE LABORATORIO">CUIDADOR DE ANIMALES DE LABORATORIO</option>
+						<option value="DIBUJANTE A">DIBUJANTE A</option>
+						<option value="DIBUJANTE B">DIBUJANTE B</option>
+						<option value="DIBUJANTE C">DIBUJANTE C"</option>
+						<option value="DIBUJANTE DE CONSTRUCCIÓN">DIBUJANTE DE CONSTRUCCIÓN</option>
+						<option value="DIBUJANTE DE INGENIERÍA Y ARQUITECTURA">DIBUJANTE DE INGENIERÍA Y ARQUITECTURA</option>
+						<option value="ECONOMISTA">ECONOMISTA</option>
+						<option value="EDUCADORA">EDUCADORA</option>
+						<option value="ELECTROCARDIOGRAFISTA">ELECTROCARDIOGRAFISTA</option>
+						<option value="ELEVADORISTA">ELEVADORISTA</option>
+						<option value="ENFERMERA ESPECIALISTA EN ATENCIÓN MATERNO INFANTIL">ENFERMERA ESPECIALISTA EN ATENCIÓN MATERNO INFANTIL</option>
+						<option value="ENFERMERA ESPECIALISTA EN ATENCIÓN PRIMARIA DE LA SALUD">ENFERMERA ESPECIALISTA EN ATENCIÓN PRIMARIA DE LA SALUD</option>
+						<option value="ENFERMERA ESPECIALISTA EN CUIDADOS INTENSIVOS">ENFERMERA ESPECIALISTA EN CUIDADOS INTENSIVOS</option>
+						<option value="ENFERMERA ESPECIALISTA EN GERIATRÍA">ENFERMERA ESPECIALISTA EN GERIATRÍA</option>
+						<option value="ENFERMERA ESPECIALISTA EN MEDICINA DE FAMILIA">ENFERMERA ESPECIALISTA EN MEDICINA DE FAMILIA</option>
+						<option value="ENFERMERA ESPECIALISTA EN NEFROLOGÍA">ENFERMERA ESPECIALISTA EN NEFROLOGÍA</option>
+						<option value="ENFERMERA ESPECIALISTA EN ONCOLOGÍA">ENFERMERA ESPECIALISTA EN ONCOLOGÍA</option>
+						<option value="ENFERMERA ESPECIALISTA EN PEDIATRÍA">ENFERMERA ESPECIALISTA EN PEDIATRÍA</option>
+						<option value="ENFERMERA ESPECIALISTA EN SALUD MENTAL">ENFERMERA ESPECIALISTA EN SALUD MENTAL</option>
+						<option value="ENFERMERA ESPECIALISTA EN SALUD PÚBLICA">ENFERMERA ESPECIALISTA EN SALUD PÚBLICA</option>
+						<option value="ENFERMERA ESPECIALISTA QUIRÚRGICA EN HOSPITAL RURAL">ENFERMERA ESPECIALISTA QUIRÚRGICA EN HOSPITAL RURAL</option>
+						<option value="ENFERMERA ESPECIALISTA QUIRÚRGICA">ENFERMERA ESPECIALISTA QUIRÚRGICA</option>
+						<option value="ENFERMERA ESPECIALISTA">ENFERMERA ESPECIALISTA</option>
+						<option value="ENFERMERA GENERAL EN HOSPITAL RURAL">ENFERMERA GENERAL EN HOSPITAL RURAL</option>
+						<option value="ENFERMERA GENERAL">ENFERMERA GENERAL</option>
+						<option value="ENFERMERA JEFE DE PISO EN MEDICINA DE FAMILIA">ENFERMERA JEFE DE PISO EN MEDICINA DE FAMILIA</option>
+						<option value="ENFERMERA JEFE DE PISO">ENFERMERA JEFE DE PISO</option>
+						<option value="ENFERMERA PARA EL TRASLADO DE PACIENTES DE TERAPIA INTENSIVA">ENFERMERA PARA EL TRASLADO DE PACIENTES DE TERAPIA INTENSIVA</option>
+						<option value="ENFERMERA PARA EL TRASLADO DE PACIENTES DE URGENCIA">ENFERMERA PARA EL TRASLADO DE PACIENTES DE URGENCIA</option>
+						<option value="ESPECIALISTA DE ALMACÉN">ESPECIALISTA DE ALMACÉN</option>
+						<option value="ESPECIALISTA DE CONTABILIDA">ESPECIALISTA DE CONTABILIDA</option>
+						<option value="ESPECIALISTA DE ESTADÍSTICA">ESPECIALISTA DE ESTADÍSTICA</option>
+						<option value="ESPECIALISTA DE PERSONAL">ESPECIALISTA DE PERSONAL</option>
+						<option value="ESPECIALISTA DE PROCESAMIENTO DE DATOS">ESPECIALISTA DE PROCESAMIENTO DE DATOS</option>
+						<option value="ESPECIALISTA DE SERVICIOS ADMINISTRATIVOS">ESPECIALISTA DE SERVICIOS ADMINISTRATIVOS</option>
+						<option value="ESPECIALISTA DE SERVICIOS TÉCNICOS">ESPECIALISTA DE SERVICIOS TÉCNICOS</option>
+						<option value="ESPECIALISTA DE TESORERÍA">ESPECIALISTA DE TESORERÍA</option>
+						<option value="ESPECIALISTA EN EQUIPOS DE AIRE ACONDICIONADO Y REFRIGERACIÓN">ESPECIALISTA EN EQUIPOS DE AIRE ACONDICIONADO Y REFRIGERACIÓN</option>
+						<option value="ESPECIALISTA EN EQUIPOS DE ELECTRÓNICA MÉDICA">ESPECIALISTA EN EQUIPOS DE ELECTRÓNICA MÉDICA</option>
+						<option value="ESPECIALISTA EN EQUIPOS DE ESPECIALIDADES">ESPECIALISTA EN EQUIPOS DE ESPECIALIDADES</option>
+						<option value="ESPECIALISTA EN EQUIPOS DE LABORATORIO">ESPECIALISTA EN EQUIPOS DE LABORATORIO</option>
+						<option value="ESPECIALISTA EN EQUIPOS DE MECÁNICA Y FLUIDOS">ESPECIALISTA EN EQUIPOS DE MECÁNICA Y FLUIDOS</option>
+						<option value="ESPECIALISTA EN EQUIPOS DE RAYOS X">ESPECIALISTA EN EQUIPOS DE RAYOS X</option>
+						<option value="ESPECIALISTA EN FLUIDOS Y ENERGÉTICOS">ESPECIALISTA EN FLUIDOS Y ENERGÉTICOS</option>
+						<option value="ESPECIALISTA EN NUTRICIÓN Y DIETÉTICA">ESPECIALISTA EN NUTRICIÓN Y DIETÉTICA</option>
+						<option value="ESPECIALISTA EN PLANTAS DE LAVADO">ESPECIALISTA EN PLANTAS DE LAVADO</option>
+						<option value="ESTOMATÓLOGO EN HOSPITAL RURAL">ESTOMATÓLOGO EN HOSPITAL RURAL</option>
+						<option value="ESTOMATÓLOGO EN UNIDAD MÉDICA DE CAMPO">ESTOMATÓLOGO EN UNIDAD MÉDICA DE CAMPO</option>
+						<option value="ESTOMATÓLOGO EN UNIDAD MÉDICA DE ESQUEMA MODIFICADO Y CAMPO">ESTOMATÓLOGO EN UNIDAD MÉDICA DE ESQUEMA MODIFICADO Y CAMPO</option>
+						<option value="ESTOMATÓLOGO">ESTOMATÓLOGO</option>
+						<option value="FONOAUDIÓLOGO">FONOAUDIÓLOGO</option>
+						<option value="GUARDAVIDAS">GUARDAVIDAS</option>
+						<option value="HELIOGRAFISTA">HELIOGRAFISTA</option>
+						<option value="HISTOTECNÓLOGO">HISTOTECNÓLOGO</option>
+						<option value="INGENIERO">INGENIERO</option>
+						<option value="INHALOTERAPEUTA">INHALOTERAPEUTA</option>
+						<option value="INTENDENTE">INTENDENTE</option>
+						<option value="JARDINERO FUMIGADOR DE CENTROS VACACIONALES">JARDINERO FUMIGADOR DE CENTROS VACACIONALES</option>
+						<option value="JEFE DE GRUPO DE ALMACÉN">JEFE DE GRUPO DE ALMACÉN</option>
+						<option value="JEFE DE GRUPO DE CONTABILIDAD">JEFE DE GRUPO DE CONTABILIDAD</option>
+						<option value="JEFE DE GRUPO DE ESTADÍSTICA">JEFE DE GRUPO DE ESTADÍSTICA</option>
+						<option value="JEFE DE GRUPO DE MÉDICOS FAMILIARES">JEFE DE GRUPO DE MÉDICOS FAMILIARES</option>
+						<option value="JEFE DE GRUPO DE PERSONAL">JEFE DE GRUPO DE PERSONAL</option>
+						<option value="JEFE DE GRUPO DE PROCESAMIENTO DE DATOS">JEFE DE GRUPO DE PROCESAMIENTO DE DATOS</option>
+						<option value="JEFE DE GRUPO DE SERVICIOS ADMINISTRATIVOS">JEFE DE GRUPO DE SERVICIOS ADMINISTRATIVOS</option>
+						<option value="JEFE DE GRUPO DE SERVICIOS TÉCNICOS">JEFE DE GRUPO DE SERVICIOS TÉCNICOS</option>
+						<option value="JEFE DE GRUPO DE TESORERÍA">JEFE DE GRUPO DE TESORERÍA</option>
+						<option value="JEFE DE GRUPOS DE SERVICIOS DE PERSONAL">JEFE DE GRUPOS DE SERVICIOS DE PERSONAL</option>
+						<option value="JEFE DE LÍNEA EN TIENDAS">JEFE DE LÍNEA EN TIENDAS</option>
+						<option value="JEFE DE OFICINA A">JEFE DE OFICINA A</option>
+						<option value="JEFE DE PARTERAS">JEFE DE PARTERAS</option>
+						<option value="JEFE DE TURNO">JEFE DE TURNO</option>
+						<option value="JEFE TÉCNICO DE COBRANZA Y ADEUDOS">JEFE TÉCNICO DE COBRANZA Y ADEUDOS</option>
+						<option value="LABORATORISTA EN HOSPITAL RURAL">LABORATORISTA EN HOSPITAL RURAL</option>
+						<option value="LABORATORISTA">LABORATORISTA</option>
+						<option value="LAVANDERO EN CENTROS VACACIONALES">LAVANDERO EN CENTROS VACACIONALES</option>
+						<option value="MACHETERO">MACHETERO</option>
+						<option value="MANEJADOR DE ALIMENTOS DE LOS SERVICIOS DE NUTRICIÓN Y DIETÉTICA">MANEJADOR DE ALIMENTOS DE LOS SERVICIOS DE NUTRICIÓN Y DIETÉTICA</option>
+						<option value="MASAJISTA">MASAJISTA</option>
+						<option value="MÉDICO EN UNIDAD MÉDICA DE CAMPO">MÉDICO EN UNIDAD MÉDICA DE CAMPO</option>
+						<option value="MÉDICO FAMILIAR">MÉDICO FAMILIAR</option>
+						<option value="MÉDICO GENERAL EN UNIDAD MÉDICA DE CAMPO">MÉDICO GENERAL EN UNIDAD MÉDICA DE CAMPO</option>
+						<option value="MÉDICO GENERAL">MÉDICO GENERAL</option>
+						<option value="MÉDICO NO FAMILIAR EN HOSPITAL RURAL">MÉDICO NO FAMILIAR EN HOSPITAL RURAL</option>
+						<option value="MÉDICO NO FAMILIAR">MÉDICO NO FAMILIAR</option>
+						<option value="MÉDICO PARA EL TRASLADO DE PACIENTES DE TERAPIA INTENSIVA">MÉDICO PARA EL TRASLADO DE PACIENTES DE TERAPIA INTENSIVA</option>
+						<option value="MÉDICO PARA EL TRASLADO DE PACIENTES DE URGENCIA">MÉDICO PARA EL TRASLADO DE PACIENTES DE URGENCIA</option>
+						<option value="MÉDICO VETERINARIO ZOOTECNISTA">MÉDICO VETERINARIO ZOOTECNISTA</option>
+						<option value="MENSAJERO">MENSAJERO</option>
+						<option value="MOTOCICLISTA">MOTOCICLISTA</option>
+						<option value="MULTILITISTA">MULTILITISTA</option>
+						<option value="NUTRICIONISTA DIETISTA EN HOSPITAL RURAL">NUTRICIONISTA DIETISTA EN HOSPITAL RURAL</option>
+						<option value="NUTRICIONISTA DIETISTA">NUTRICIONISTA DIETISTA</option>
+						<option value="NUTRIÓLOGO CLÍNICO ESPECIALIZADO">NUTRIÓLOGO CLÍNICO ESPECIALIZADO</option>
+						<option value="OFICIAL DE ALMACÉN">OFICIAL DE ALMACÉN</option>
+						<option value="OFICIAL DE CONSERVACIÓN EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO">OFICIAL DE CONSERVACIÓN EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO</option>
+						<option value="OFICIAL DE CONTABILIDAD">OFICIAL DE CONTABILIDAD</option>
+						<option value="OFICIAL DE ESTADÍSTICA">OFICIAL DE ESTADÍSTICA</option>
+						<option value="OFICIAL DE FARMACIA">OFICIAL DE FARMACIA</option>
+						<option value="OFICIAL DE PERSONAL">OFICIAL DE PERSONAL</option>
+						<option value="OFICIAL DE PROCESAMIENTO DE DATOS">OFICIAL DE PROCESAMIENTO DE DATOS</option>
+						<option value="OFICIAL DE PUERICULTURA">OFICIAL DE PUERICULTURA</option>
+						<option value="OFICIAL DE SERVICIOS ADMINISTRATIVOS">OFICIAL DE SERVICIOS ADMINISTRATIVOS</option>
+						<option value="OFICIAL DE SERVICIOS DE INTENDENCIA">OFICIAL DE SERVICIOS DE INTENDENCIA</option>
+						<option value="OFICIAL DE SERVICIOS DE LAVANDERÍA">OFICIAL DE SERVICIOS DE LAVANDERÍA</option>
+						<option value="OFICIAL DE SERVICIOS TÉCNICOS">OFICIAL DE SERVICIOS TÉCNICOS</option>
+						<option value="OFICIAL DE SOPORTE TÉCNICO EN INFORMÁTICA">OFICIAL DE SOPORTE TÉCNICO EN INFORMÁTICA</option>
+						<option value="OFICIAL DE TESORERÍA">OFICIAL DE TESORERÍA</option>
+						<option value="OFICIAL TÉCNICO DE ACTUARIADO SOCIAL">OFICIAL TÉCNICO DE ACTUARIADO SOCIAL</option>
+						<option value="OPERADOR A DE INTERCOMUNICACIÓN NEUMÁTICA">OPERADOR A DE INTERCOMUNICACIÓN NEUMÁTICA</option>
+						<option value="OPERADOR AUXILIAR DE CENTROS VACACIONALES">OPERADOR AUXILIAR DE CENTROS VACACIONALES</option>
+						<option value="OPERADOR B DE INTERCOMUNICACIÓN NEUMÁTICA">OPERADOR B DE INTERCOMUNICACIÓN NEUMÁTICA</option>
+						<option value="OPERADOR DE AMBULANCIAS">OPERADOR DE AMBULANCIAS</option>
+						<option value="OPERADOR DE CONSERVACIÓN DE CENTROS VACACIONALES">OPERADOR DE CONSERVACIÓN DE CENTROS VACACIONALES</option>
+						<option value="OPERADOR DE MANTENIMIENTO EN HOSPITAL RURAL">OPERADOR DE MANTENIMIENTO EN HOSPITAL RURAL</option>
+						<option value="OPERADOR DE MANTENIMIENTO EN UNIDADES MÉDICAS DE CAMPO">OPERADOR DE MANTENIMIENTO EN UNIDADES MÉDICAS DE CAMPO</option>
+						<option value="OPERADOR DE MÁQUINAS DE REVELADO AUTOMÁTICO">OPERADOR DE MÁQUINAS DE REVELADO AUTOMÁTICO</option>
+						<option value="OPERADOR DE SEGURIDAD EN ALBERCAS DE CENTROS VACACIONALES">OPERADOR DE SEGURIDAD EN ALBERCAS DE CENTROS VACACIONALES</option>
+						<option value="OPERADOR DE SERVICIOS AUXILIARES EN UNIDAD MÉDICA DE CAMPO LABORATORIO">OPERADOR DE SERVICIOS AUXILIARES EN UNIDAD MÉDICA DE CAMPO LABORATORIO</option>
+						<option value="OPERADOR DE SERVICIOS AUXILIARES EN UNIDAD MÉDICA DE CAMPO">OPERADOR DE SERVICIOS AUXILIARES EN UNIDAD MÉDICA DE CAMPO</option>
+						<option value="OPERADOR DE SERVICIOS AUXILIARES LABORATORIO EN HOSPITAL RURAL">OPERADOR DE SERVICIOS AUXILIARES LABORATORIO EN HOSPITAL RURAL</option>
+						<option value="OPERADOR DE SERVICIOS AUXILIARES RADIODIAGNÓSTICO EN HOSPITAL RURAL">OPERADOR DE SERVICIOS AUXILIARES RADIODIAGNÓSTICO EN HOSPITAL RURAL</option>
+						<option value="OPERADOR DE SERVICIOS DE LAVANDERÍA">OPERADOR DE SERVICIOS DE LAVANDERÍA</option>
+						<option value="OPERADOR DE SERVICIOS DE RADIODIAGNÓSTICO EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO">OPERADOR DE SERVICIOS DE RADIODIAGNÓSTICO EN UNIDADES MÉDICAS DE ESQUEMA MODIFICADO Y CAMPO</option>
+						<option value="OPERADOR DE SERVICIOS INTERNOS DE CENTROS VACACIONALES">OPERADOR DE SERVICIOS INTERNOS DE CENTROS VACACIONALES</option>
+						<option value="OPERADOR DE TELEX Y TELEGRÁFICO A">OPERADOR DE TELEX Y TELEGRÁFICO A</option>
+						<option value="OPERADOR DE TELEX Y TELEGRÁFICO B">OPERADOR DE TELEX Y TELEGRÁFICO B</option>
+						<option value="OPERADOR DE TELEX Y TELEGRÁFICO C">OPERADOR DE TELEX Y TELEGRÁFICO C</option>
+						<option value="OPERADOR DE VEHÍCULOS DE CENTROS VACACIONALES">OPERADOR DE VEHÍCULOS DE CENTROS VACACIONALES</option>
+						<option value="OPERADOR DE VEHÍCULOS DE SERVICIOS ORDINARIOS Y PROGRAMADOS">OPERADOR DE VEHÍCULOS DE SERVICIOS ORDINARIOS Y PROGRAMADOS</option>
+						<option value="OPERADOR DE VELATORIO">OPERADOR DE VELATORIO</option>
+						<option value="OPERADOR GENERAL EN TIENDAS">OPERADOR GENERAL EN TIENDAS</option>
+						<option value="OPERADOR TELEFÓNICO A">OPERADOR TELEFÓNICO A</option>
+						<option value="OPERADOR TELEFÓNICO B">OPERADOR TELEFÓNICO B</option>
+						<option value="OPERADOR TELEFÓNICO C">OPERADOR TELEFÓNICO C</option>
+						<option value="OPTOMETRISTA">OPTOMETRISTA</option>
+						<option value="ORIENTADOR DE ACTIVIDADES ARTÍSTICAS ARTE DRAMÁTICO">ORIENTADOR DE ACTIVIDADES ARTÍSTICAS ARTE DRAMÁTICO</option>
+						<option value="ORIENTADOR DE ACTIVIDADES ARTÍSTICAS ARTES PLÁSTICAS">ORIENTADOR DE ACTIVIDADES ARTÍSTICAS ARTES PLÁSTICAS</option>
+						<option value="ORIENTADOR DE ACTIVIDADES ARTÍSTICAS MAESTRO DE MÚSICA">ORIENTADOR DE ACTIVIDADES ARTÍSTICAS MAESTRO DE MÚSICA</option>
+						<option value="ORIENTADOR DE EDUCACIÓN FÍSICA">ORIENTADOR DE EDUCACIÓN FÍSICA</option>
+						<option value="ORIENTADOR DE INICIACIÓN CULTURAL">ORIENTADOR DE INICIACIÓN CULTURAL</option>
+						<option value="ORIENTADOR TÉCNICO MÉDICO">ORIENTADOR TÉCNICO MÉDICO</option>
+						<option value="ORIENTADOR">ORIENTADOR</option>
+						<option value="ORIENTADORA DE ACTIVIDADES ARTÍSTICAS DANZA">ORIENTADORA DE ACTIVIDADES ARTÍSTICAS DANZA</option>
+						<option value="ORIENTADORA DE ACTIVIDADES FAMILIARES">ORIENTADORA DE ACTIVIDADES FAMILIARES</option>
+						<option value="ORTOPEDISTA">ORTOPEDISTA</option>
+						<option value="PARTERA">PARTERA</option>
+						<option value="PASANTE DE ABOGADO">PASANTE DE ABOGADO</option>
+						<option value="PASANTE DE INGENIERÍA">PASANTE DE INGENIERÍA</option>
+						<option value="PELUQUERO">PELUQUERO</option>
+						<option value="PIANISTA">PIANISTA</option>
+						<option value="PLANCHADOR EN CENTROS VACACIONALES">PLANCHADOR EN CENTROS VACACIONALES</option>
+						<option value="PREPARADOR DE RECETAS">PREPARADOR DE RECETAS</option>
+						<option value="PREPARADOR DESPACHADOR">PREPARADOR DESPACHADOR</option>
+						<option value="PROFESOR DE EDUCACIÓN FÍSICA A">PROFESOR DE EDUCACIÓN FÍSICA A</option>
+						<option value="PROFESOR DE EDUCACIÓN FÍSICA B">PROFESOR DE EDUCACIÓN FÍSICA B</option>
+						<option value="PROFESOR DE EDUCACIÓN FÍSICA C">PROFESOR DE EDUCACIÓN FÍSICA C</option>
+						<option value="PROMOTOR DE ESTOMATOLOGÍA">PROMOTOR DE ESTOMATOLOGÍA</option>
+						<option value="PROMOTOR DE SALUD COMUNITARIA">PROMOTOR DE SALUD COMUNITARIA</option>
+						<option value="PSICÓLOGO CLÍNICO">PSICÓLOGO CLÍNICO</option>
+						<option value="PSICÓLOGO">PSICÓLOGO</option>
+						<option value="PSICÓMETRA">PSICÓMETRA</option>
+						<option value="QUÍMICO CLÍNICO JEFE DE SECCIÓN">QUÍMICO CLÍNICO JEFE DE SECCIÓN</option>
+						<option value="QUÍMICO CLÍNICO JEFE DE SECCIÓN">QUÍMICO CLÍNICO JEFE DE SECCIÓN</option>
+						<option value="QUÍMICO CLÍNICO">QUÍMICO CLÍNICO</option>
+						<option value="QUÍMICO RESPONSABLE">QUÍMICO RESPONSABLE</option>
+						<option value="RADIOTERAPEUTA">RADIOTERAPEUTA</option>
+						<option value="REDACTOR A">REDACTOR A</option>
+						<option value="REDACTOR B">REDACTOR B</option>
+						<option value="SOCIÓLOGO">SOCIÓLOGO</option>
+						<option value="TÉCNICO A EN AIRE ACONDICIONADO Y REFRIGERACIÓN">TÉCNICO A EN AIRE ACONDICIONADO Y REFRIGERACIÓN</option>
+						<option value="TÉCNICO A EN EQUIPOS MÉDICOS">TÉCNICO A EN EQUIPOS MÉDICOS</option>
+						<option value="TÉCNICO A EN FLUIDOS Y ENERGÉTICOS">TÉCNICO A EN FLUIDOS Y ENERGÉTICOS</option>
+						<option value="TÉCNICO A EN PLANTAS DE LAVADO">TÉCNICO A EN PLANTAS DE LAVADO</option>
+						<option value="TÉCNICO A EN TELECOMUNICACIONES">TÉCNICO A EN TELECOMUNICACIONES</option>
+						<option value="TÉCNICO ANESTESISTA">TÉCNICO ANESTESISTA</option>
+						<option value="TÉCNICO B EN EQUIPOS MÉDICOS">TÉCNICO B EN EQUIPOS MÉDICOS</option>
+						<option value="TÉCNICO B EN FLUIDOS Y ENERGÉTICOS">TÉCNICO B EN FLUIDOS Y ENERGÉTICOS</option>
+						<option value="TÉCNICO B EN PLANTAS DE LAVADO">TÉCNICO B EN PLANTAS DE LAVADO</option>
+						<option value="TÉCNICO B EN TELECOMUNICACIONES">TÉCNICO B EN TELECOMUNICACIONES</option>
+						<option value="TÉCNICO C EN FLUIDOS Y ENERGÉTICOS">TÉCNICO C EN FLUIDOS Y ENERGÉTICOS</option>
+						<option value="TÉCNICO C EN PLANTAS DE LAVADO">TÉCNICO C EN PLANTAS DE LAVADO</option>
+						<option value="TÉCNICO C EN TELECOMUNICACIONES">TÉCNICO C EN TELECOMUNICACIONES</option>
+						<option value="TÉCNICO DE ACTUARIADO SOCIAL">TÉCNICO DE ACTUARIADO SOCIAL</option>
+						<option value="TÉCNICO DE BIBLIOTECAS">TÉCNICO DE BIBLIOTECAS</option>
+						<option value="TÉCNICO ELECTRICISTA">TÉCNICO ELECTRICISTA</option>
+						<option value="TÉCNICO ELECTRÓNICO">TÉCNICO ELECTRÓNICO</option>
+						<option value="TÉCNICO EN EL MANEJO DE APARATOS PARA ELECTRODIAGNÓSTICO">TÉCNICO EN EL MANEJO DE APARATOS PARA ELECTRODIAGNÓSTICO</option>
+						<option value="TÉCNICO EN ELECTRÓNICA MÉDICA Y LABORATORIO">TÉCNICO EN ELECTRÓNICA MÉDICA Y LABORATORIO</option>
+						<option value="TÉCNICO EN EQUIPO DE RAYOS X">TÉCNICO EN EQUIPO DE RAYOS X</option>
+						<option value="TÉCNICO EN EQUIPOS DE ABSORCIÓN">TÉCNICO EN EQUIPOS DE ABSORCIÓN</option>
+						<option value="TÉCNICO EN EQUIPOS HELICOIDAL">TÉCNICO EN EQUIPOS HELICOIDAL</option>
+						<option value="TÉCNICO EN EQUIPOS RECIPROCANTES">TÉCNICO EN EQUIPOS RECIPROCANTES</option>
+						<option value="TÉCNICO EN EQUIPOS TURBOCENTRÍFUGO">TÉCNICO EN EQUIPOS TURBOCENTRÍFUGO</option>
+						<option value="TÉCNICO EN MECÁNICA Y FLUIDOS Y ESPECIALIDADES">TÉCNICO EN MECÁNICA Y FLUIDOS Y ESPECIALIDADES</option>
+						<option value="TÉCNICO EN MEDICINA NUCLEAR">TÉCNICO EN MEDICINA NUCLEAR</option>
+						<option value="TÉCNICO EN MICROFOTOGRAFÍA">TÉCNICO EN MICROFOTOGRAFÍA</option>
+						<option value="TÉCNICO EN PUERICULTURA">TÉCNICO EN PUERICULTURA</option>
+						<option value="TÉCNICO EN TELECOMUNICACIONES A">TÉCNICO EN TELECOMUNICACIONES A</option>
+						<option value="TÉCNICO EN TELECOMUNICACIONES B">TÉCNICO EN TELECOMUNICACIONES B</option>
+						<option value="TÉCNICO EN TELECOMUNICACIONES C">TÉCNICO EN TELECOMUNICACIONES C</option>
+						<option value="TÉCNICO MECÁNICO">TÉCNICO MECÁNICO</option>
+						<option value="TÉCNICO MECÁNICO">TÉCNICO MECÁNICO</option>
+						<option value="TÉCNICO OPERADOR DE TRANSPORTE DE PACIENTES DE TERAPIA">TÉCNICO OPERADOR DE TRANSPORTE DE PACIENTES DE TERAPIA</option>
+						<option value="TÉCNICO OPERADOR DE TRANSPORTE DE PACIENTES DE URGENCIA">TÉCNICO OPERADOR DE TRANSPORTE DE PACIENTES DE URGENCIA</option>
+						<option value="TÉCNICO PLOMERO">TÉCNICO PLOMERO</option>
+						<option value="TÉCNICO POLIVALENTE">TÉCNICO POLIVALENTE</option>
+						<option value="TÉCNICO RADIÓLOGO">TÉCNICO RADIÓLOGO</option>
+						<option value="TÉCNICO YESISTA">TÉCNICO YESISTA</option>
+						<option value="TERAPISTA FÍSICO">TERAPISTA FÍSICO</option>
+						<option value="TERAPISTA OCUPACIONAL">TERAPISTA OCUPACIONAL</option>
+						<option value="TRABAJADOR SOCIAL CLÍNICO">TRABAJADOR SOCIAL CLÍNICO</option>
+						<option value="TRABAJADORA SOCIAL EN HOSPITAL RURAL">TRABAJADORA SOCIAL EN HOSPITAL RURAL</option>
+						<option value="TRABAJADORA SOCIAL">TRABAJADORA SOCIAL</option>
+						<option value="N12 OP  CAJAS TIENDA 80">N12 OP  CAJAS TIENDA 80</option>
+						<option value="N13 JEFE AREA TIENDA 80">N13 JEFE AREA TIENDA 80</option>
+						<option value="N14 AYTE ADMVO 80">N14 AYTE ADMVO 80</option>
+						<option value="N14 PROMO BRIG SAL COM 80">N14 PROMO BRIG SAL COM 80</option>
+						<option value="N16 CAJ AUX SUBD1 Y 2  80">N16 CAJ AUX SUBD1 Y 2  80</option>
+						<option value="N17 JEFE CAJ TIENDA 80">N17 JEFE CAJ TIENDA 80</option>
+						<option value="N17 TRAM CONV GARANT B 80">N17 TRAM CONV GARANT B 80</option>
+						<option value="N18 JEFE ROPERIA UMH 80">N18 JEFE ROPERIA UMH 80</option>
+						<option value="N18 OP SIST PERSONAL   80">N18 OP SIST PERSONAL   80</option>
+						<option value="N19 ENC BOD O COB IMSS 80">N19 ENC BOD O COB IMSS 80</option>
+						<option value="N20 AGENTE FUNERALES 80">N20 AGENTE FUNERALES 80</option>
+						<option value="N20 INST ENSEÑANZA CSS 80">N20 INST ENSEÑANZA CSS 80</option>
+						<option value="N20 OPERADOR SIST D 80">N20 OPERADOR SIST D 80</option>
+						<option value="N20 TEC INF C CTR P INV80">N20 TEC INF C CTR P INV80</option>
+						<option value="N21 PROMOTOR(A) SAL INTEG PREVENIMSS 80">N21 PROMOTOR(A) SAL INTEG PREVENIMSS 80</option>
+						<option value="N22 ASISTENTE ADMVO B  80">N22 ASISTENTE ADMVO B  80</option>
+						<option value="N22 J OFNA TEC ADMVA 1 80">N22 J OFNA TEC ADMVA 1 80</option>
+						<option value="N24 CAJERO AYTE D3 Y 4 80">N24 CAJERO AYTE D3 Y 4 80</option>
+						<option value="N24 J OFNA TEC ADMVA 2 80">N24 J OFNA TEC ADMVA 2 80</option>
+						<option value="N24 OPERADOR SIST C 80">N24 OPERADOR SIST C 80</option>
+						<option value="N24 SUBJ SER BAS UNI C 80">N24 SUBJ SER BAS UNI C 80</option>
+						<option value="N25 ASISTENTE ADMVO A  80">N25 ASISTENTE ADMVO A  80</option>
+						<option value="N25 J O DIE ENS UMH AYB80">N25 J O DIE ENS UMH AYB80</option>
+						<option value="N25 JEF D NUT DIE UMHD 80">N25 JEF D NUT DIE UMHD 80</option>
+						<option value="N25 SUBJ TRAB SOC UMH  80">N25 SUBJ TRAB SOC UMH  80</option>
+						<option value="N25 TEC ECOALIMENTACION 80">N25 TEC ECOALIMENTACION 80</option>
+						<option value="N25 TECNICO ECOALIMENTACION 80">N25 TECNICO ECOALIMENTACION 80</option>
+						<option value="N27 ANALISTA D 80">N27 ANALISTA D 80</option>
+						<option value="N27 CAJERO TIT D3Y4 80">N27 CAJERO TIT D3Y4 80</option>
+						<option value="N27 J OFNA TEC ADMVA 3 80">N27 J OFNA TEC ADMVA 3 80</option>
+						<option value="N27 JEF TRAB SOC UMF 80v">N27 JEF TRAB SOC UMF 80v</option>
+						<option value="N27 JEF TRAB SOC UMH D 80">N27 JEF TRAB SOC UMH D 80</option>
+						<option value="N27 SUBJ SER BAS UNI B 80">N27 SUBJ SER BAS UNI B 80</option>
+						<option value="N28 CONFIANZA NIVEL 80">N28 CONFIANZA NIVEL 80</option>
+						<option value="N29 CONTADOR TIENDA C  80">N29 CONTADOR TIENDA C  80</option>
+						<option value="N29 TEC EST SOC SAL TRA80">N29 TEC EST SOC SAL TRA80</option>
+						<option value="N30 ADMOR DE TEATRO DF 80">N30 ADMOR DE TEATRO DF 80</option>
+						<option value="N30 ANALISTA C 80">N30 ANALISTA C 80</option>
+						<option value="N30 CONTROLADOR(A) SIST INTER CESIECQ 80">N30 CONTROLADOR(A) SIST INTER CESIECQ 80</option>
+						<option value="N30 J OFNA TEC ADMVA 4 80">N30 J OFNA TEC ADMVA 4 80</option>
+						<option value="N30 JEF D NUT DIE UMHC 80">N30 JEF D NUT DIE UMHC 80</option>
+						<option value="N30 JEF TRAB SOC UMH C 80">N30 JEF TRAB SOC UMH C 80</option>
+						<option value="N30 SUBJ SER BAS UNI A 80">N30 SUBJ SER BAS UNI A 80</option>
+						<option value="N31 ADMOR CSS UD Y CA  80">N31 ADMOR CSS UD Y CA  80</option>
+						<option value="N31 ADMOR GUARDERIA 80">N31 ADMOR GUARDERIA 80</option>
+						<option value="N33 ADMINISTRADOR UMF 580">N33 ADMINISTRADOR UMF 580</option>
+						<option value="N33 ADMOR UMF 4 80">N33 ADMOR UMF 4 80</option>
+						<option value="N33 ANALISTA A 80">N33 ANALISTA A 80</option>
+						<option value="N33 JEF D NUT DIE UMHB 80">N33 JEF D NUT DIE UMHB 80</option>
+						<option value="N33 PROM ATN PENSIONADOS 80">N33 PROM ATN PENSIONADOS 80</option>
+						<option value="N33 PROM SERV PRES SOC 80">N33 PROM SERV PRES SOC 80</option>
+						<option value="N34 CONTADOR TIENDA B  80">N34 CONTADOR TIENDA B  80</option>
+						<option value="N34 JEF APOYO OP TIEN A 80">N34 JEF APOYO OP TIEN A 80</option>
+						<option value="N34 JEFE MERC TIENDA A 80">N34 JEFE MERC TIENDA A 80</option>
+						<option value="N34 SUBJEF BC CON UNID 80">N34 SUBJEF BC CON UNID 80</option>
+						<option value="N35 TEC DOSIMETRISTA 80">N35 TEC DOSIMETRISTA 80</option>
+						<option value="N36 ADMINISTRADOR UMF 4 80">N36 ADMINISTRADOR UMF 4 80</option>
+						<option value="N36 ANALISTA RESP D 80">N36 ANALISTA RESP D 80</option>
+						<option value="N36 JEF D NUT DIE UMHA 80">N36 JEF D NUT DIE UMHA 80</option>
+						<option value="N36 JEF TRAB SOC UMH A 80">N36 JEF TRAB SOC UMH A 80</option>
+						<option value="N36 SUBJEF A CONS UNID 80">N36 SUBJEF A CONS UNID 80</option>
+						<option value="N36 TEC EN PERFUSION 80">N36 TEC EN PERFUSION 80</option>
+						<option value="N37 CONFIANZA NIVEL 80">N37 CONFIANZA NIVEL 80</option>
+						<option value="N37 CONTADOR TIENDA A  80">N37 CONTADOR TIENDA A  80</option>
+						<option value="N37 JEFE ENFERM UMF 4 80">N37 JEFE ENFERM UMF 4 80</option>
+						<option value="N38 ANALISTA RESP C 80">N38 ANALISTA RESP C 80</option>
+						<option value="N39 ADMINISTRADOR UMF 3 80">N39 ADMINISTRADOR UMF 3 80</option>
+						<option value="N39 ADMINISTRADOR(A) DEL CENTRO DE SIMULACION PARA LA EXCELENCIA CLINICA QX">N39 ADMINISTRADOR(A) DEL CENTRO DE SIMULACION PARA LA EXCELENCIA CLINICA QX</option>
+						<option value="N39 ADMOR CENT INV ED FORM DOC 80">N39 ADMOR CENT INV ED FORM DOC 80</option>
+						<option value="N39 ADMOR TIENDA C 80">N39 ADMOR TIENDA C 80</option>
+						<option value="N39 ADMOR UMH E 80">N39 ADMOR UMH E 80</option>
+						<option value="N39 ANALISTA RESP B 80">N39 ANALISTA RESP B 80</option>
+						<option value="N39 J OFNA SER BAS UMAE 80">N39 J OFNA SER BAS UMAE 80</option>
+						<option value="N39 JEFE C CONSER UNID 80">N39 JEFE C CONSER UNID 80</option>
+						<option value="N39 JEFE ENFERM UMF 3  80">N39 JEFE ENFERM UMF 3  80</option>
+						<option value="N39 RESP PROY SUBD 2 80">N39 RESP PROY SUBD 2 80</option>
+						<option value="N39 SUBJ ENF UM E 80">N39 SUBJ ENF UM E 80</option>
+						<option value="N39 SUPERVISOR LIMPIEZA E HIGIENE 80">N39 SUPERVISOR LIMPIEZA E HIGIENE 80</option>
+						<option value="N40 ANALISTA RESP A 80">N40 ANALISTA RESP A 80</option>
+						<option value="N40 SUBJ ENF UM D 80">N40 SUBJ ENF UM D 80</option>
+						<option value="N41 ADMINISTRADOR UMF 2 80">N41 ADMINISTRADOR UMF 2 80</option>
+						<option value="N41 ADMOR FARMACIA UMAE 80">N41 ADMOR FARMACIA UMAE 80</option>
+						<option value="N41 ADMOR TIENDA B 80">N41 ADMOR TIENDA B 80</option>
+						<option value="N41 ADMOR UMF 2 80">N41 ADMOR UMF 2 80</option>
+						<option value="N41 ADMOR VELATORIO B  80">N41 ADMOR VELATORIO B  80</option>
+						<option value="N41 ANALISTA COORD C   80">N41 ANALISTA COORD C   80</option>
+						<option value="N41 COOR CURSOS ENF  80">N41 COOR CURSOS ENF 80</option>
+						<option value="N41 DIR U OP PRES SOC C 80">N41 DIR U OP PRES SOC C 80</option>
+						<option value="N41 JEFE B CONSER UNID 80">N41 JEFE B CONSER UNID 80</option>
+						<option value="N41 JEFE ENFERM UM D 80">N41 JEFE ENFERM UM D 80</option>
+						<option value="N41 JEFE ENFERM UM E 80">N41 JEFE ENFERM UM E 80</option>
+						<option value="N41 RESP PROY SUBD 3 80">N41 RESP PROY SUBD 3 80</option>
+						<option value="N41 SUBJ ENF UM A 80">N41 SUBJ ENF UM A 80</option>
+						<option value="N41 SUBJ ENF UM C 80">N41 SUBJ ENF UM C 80</option>
+						<option value="N41 SUP ASIST MED 80">N41 SUP ASIST MED 80</option>
+						<option value="N42 ANALISTA INF EPIDEMIOLOGICA 80">N42 ANALISTA INF EPIDEMIOLOGICA 80</option>
+						<option value="N42 ANALISTA INF SALUD D3YD4 80">N42 ANALISTA INF SALUD D3YD4 80</option>
+						<option value="N42 J OFNA IM Y AC UMAE80">N42 J OFNA IM Y AC UMAE80</option>
+						<option value="N42 J OFNA NUT DIE UMAE80">N42 J OFNA NUT DIE UMAE80</option>
+						<option value="N42 JEF OFNA T SOC UMAE80">N42 JEF OFNA T SOC UMAE80</option>
+						<option value="N42 JEFE ENFERM UM C 80">N42 JEFE ENFERM UM C 80</option>
+						<option value="N42 SUP SIST INF SALUD 80">N42 SUP SIST INF SALUD 80</option>
+						<option value="N43 JEFE DEPTO UMH C 80">N43 JEFE DEPTO UMH C 80</option>
+						<option value="N43 JEFE ENFERM UM A 80">N43 JEFE ENFERM UM A 80</option>
+						<option value="N43 PROFESOR(A) ENFERMERIA CESIECQ 80">N43 PROFESOR(A) ENFERMERIA CESIECQ 80</option>
+						<option value="N44 ADMINISTRADOR UMF 180">N44 ADMINISTRADOR UMF 180</option>
+						<option value="N44 ADMOR TIENDA A 80">N44 ADMOR TIENDA A 80</option>
+						<option value="N44 ANALISTA COORD A 80">N44 ANALISTA COORD A 80</option>
+						<option value="N44 COO D NUT DIE D3Y4 80">N44 COO D NUT DIE D3Y4 80</option>
+						<option value="N44 COORD DEL TS D3Y4  80">N44 COORD DEL TS D3Y4  80</option>
+						<option value="N44 DIR U OP PRES SOC B80">N44 DIR U OP PRES SOC B80</option>
+						<option value="N44 DIRECTORA GUARD A  80">N44 DIRECTORA GUARD A  80</option>
+						<option value="N44 JEFE A CONSER UNID 80">N44 JEFE A CONSER UNID 80</option>
+						<option value="N44 JEFE DE OFICINA SUBDEL 2 80">N44 JEFE DE OFICINA SUBDEL 2 80</option>
+						<option value="N44 JEFE DE OFICINA SUBDEL 3 80">N44 JEFE DE OFICINA SUBDEL 3 80</option>
+						<option value="N44 JEFE DEPTO UMH A 80">N44 JEFE DEPTO UMH A 80</option>
+						<option value="N44 JEFE OFNA SUBDEL 2 80">N44 JEFE OFNA SUBDEL 2 80</option>
+						<option value="N44 RESP PROY SUBD 4 80">N44 RESP PROY SUBD 4 80</option>
+						<option value="N44 SUBJEFE ENFER UMAE 80">N44 SUBJEFE ENFER UMAE 80</option>
+						<option value="N44 SUP NUTRI DIET 80">N44 SUP NUTRI DIET 80</option>
+						<option value="N44 SUP TRAB SOCIAL 80">N44 SUP TRAB SOCIAL 80</option>
+						<option value="N45 JEFE DEPTO UMH B 80">N45 JEFE DEPTO UMH B 80</option>
+						<option value="N46 CONFIANZA ENFERM 80">N46 CONFIANZA ENFERM 80</option>
+						<option value="N46 ENF SUP ATN MED 80">N46 ENF SUP ATN MED 80</option>
+						<option value="N46 ENF SUP SAL PUBLICA 80">N46 ENF SUP SAL PUBLICA 80</option>
+						<option value="N46 JEFE LABORATORIO   80">N46 JEFE LABORATORIO   80</option>
+						<option value="N47 AUX DE APOYO OPERATIVO D3 Y D4 80">N47 AUX DE APOYO OPERATIVO D3 Y D4 80</option>
+						<option value="N47 COORD ZON GUAR D3Y480">N47 COORD ZON GUAR D3Y480</option>
+						<option value="N47 DIR U OP PRES SOC A80">N47 DIR U OP PRES SOC A80</option>
+						<option value="N47 JEFE DEPTO UMH A 80">N47 JEFE DEPTO UMH A 80</option>
+						<option value="N47 JEFE OFNA SUBDEL 2 80">N47 JEFE OFNA SUBDEL 2 80</option>
+						<option value="N47 JEFE ONFNA SUBDEL 3 80">N47 JEFE ONFNA SUBDEL 3 80</option>
+						<option value="N47 RESP PROY D4 80">N47 RESP PROY D4 80</option>
+						<option value="N47 SUP SERVS FINANZ D4 80">N47 SUP SERVS FINANZ D4 80</option>
+						<option value="N48 DIRECTOR MICROZONA 80">N48 DIRECTOR MICROZONA 80</option>
+						<option value="N49 ADMON SIST INF SALUD D3YD4 80">N49 ADMON SIST INF SALUD D3YD4 80</option>
+						<option value="N49 ADMOR UMH D 80">N49 ADMOR UMH D 80</option>
+						<option value="N49 COORD DEL ENF ATN MED D3YD4 80">N49 COORD DEL ENF ATN MED D3YD4 80</option>
+						<option value="N49 COORD DEL ENF SAL PUBLICA D3YD4 80">N49 COORD DEL ENF SAL PUBLICA D3YD4 80</option>
+						<option value="N49 DIR UMF 4, 5 Y 6   80">N49 DIR UMF 4, 5 Y 6   80</option>
+						<option value="N49 DIRECTOR UMF 80">N49 DIRECTOR UMF 80</option>
+						<option value="N49 DIRECTORA ESC ENF  80">N49 DIRECTORA ESC ENF  80</option>
+						<option value="N49 JEFE DEPTO SUBDEL2 80">N49 JEFE DEPTO SUBDEL2 80</option>
+						<option value="N49 JEFE OFICINA UMAE 80">N49 JEFE OFICINA UMAE 80</option>
+						<option value="N49 JEFE OFNA SUBDEL 4 80">N49 JEFE OFNA SUBDEL 4 80</option>
+						<option value="N51 COORD HOSP DON ORG Y TEJ UMH">N51 COORD HOSP DON ORG Y TEJ UMH</option>
+						<option value="N51 DIRECTOR UMH E 80">N51 DIRECTOR UMH E 80</option>
+						<option value="N51 JEFE DE SERVICIO UMH 80">N51 JEFE DE SERVICIO UMH 80</option>
+						<option value="N51 JEFE DEP SUBDEL 3 80">N51 JEFE DEP SUBDEL 3 80</option>
+						<option value="N51 JEFE DEPTO SUBDEL ">N51 JEFE DEPTO SUBDEL </option>
+						<option value="N51 JEFE OFNA DELEG 4  80">N51 JEFE OFNA DELEG 4  80</option>
+						<option value="N51 JEFE SERVICIOS UMF 80">N51 JEFE SERVICIOS UMF 80</option>
+						<option value="N51 JEFE SEVICIOS UMH 80">N51 JEFE SEVICIOS UMH 80</option>
+						<option value="N51 PROF MED CENT INV ED FORM DOC 80">N51 PROF MED CENT INV ED FORM DOC 80</option>
+						<option value="N51 PROFESOR(A) MEDICO(A) CESIECQ 80">N51 PROFESOR(A) MEDICO(A) CESIECQ 80</option>
+						<option value="N52 COORD CLINICO UMH  80">N52 COORD CLINICO UMH  80</option>
+						<option value="N52 DIRECTO(A) CLINICA DE MAMA">N52 DIRECTO(A) CLINICA DE MAMA</option>
+						<option value="N52 DIRECTOR UM D 80">N52 DIRECTOR UM D 80</option>
+						<option value="N52 DIRECTOR UMF 3 80">N52 DIRECTOR UMF 3 80</option>
+						<option value="N52 JEFE DIVISION UMH  80">N52 JEFE DIVISION UMH  80</option>
+						<option value="N52 SUBD MED UM B 80">N52 SUBD MED UM B 80</option>
+						<option value="N52 SUBD MED UM C  0">N52 SUBD MED UM C 80</option>
+						<option value="N52 SUBDIR ADMVO UMH C 80">N52 SUBDIR ADMVO UMH C 80</option>
+						<option value="N52 SUBDIR MEDICO UMF 80">N52 SUBDIR MEDICO UMF 80</option>
+						<option value="N53 COORD CL TURNO UMH 80">N53 COORD CL TURNO UMH 80</option>
+						<option value="N53 COORD HOSP DON ORG Y TEJ UMAE">N53 COORD HOSP DON ORG Y TEJ UMAE</option>
+						<option value="N53 DIR CENT INV ED FORM DOC 80">N53 DIR CENT INV ED FORM DOC 80</option>
+						<option value="N53 DIRECTOR  UMF 2 80">N53 DIRECTOR  UMF 2 80</option>
+						<option value="N53 DIRECTOR ENF UMAE  80">N53 DIRECTOR ENF UMAE  80</option>
+						<option value="N53 DIRECTOR UM C 80">N53 DIRECTOR UM C 80</option>
+						<option value="N53 DIRECTOR UMH D 80">N53 DIRECTOR UMH D 80</option>
+						<option value="N53 DIRECTOR(A) CESIECQ 80">N53 DIRECTOR(A) CESIECQ 80</option>
+						<option value="N53 JEF DEPTO CLIN UMAE80">N53 JEF DEPTO CLIN UMAE80</option>
+						<option value="N53 JEF SPPSTIMSS UMAE 80">N53 JEF SPPSTIMSS UMAE 80</option>
+						<option value="N53 JEFE DEPTO SUBDEL 4 80">N53 JEFE DEPTO SUBDEL 4 80</option>
+						<option value="N53 JEFE DEPTO UMAE 80">N53 JEFE DEPTO UMAE 80</option>
+						<option value="N53 SUBDIR ADMVO UMH B 80">N53 SUBDIR ADMVO UMH B 80</option>
+						<option value="N53 SUBDIR MED UMH C 80">N53 SUBDIR MED UMH C 80</option>
+						<option value="N54 COORD(A) AUX OPER ADMVO D3 Y D4">N54 COORD(A) AUX OPER ADMVO D3 Y D4</option>
+						<option value="N54 DIRECTOR UMF 1 80">N54 DIRECTOR UMF 1 80</option>
+						<option value="N54 DIRECTOR UMH C 80">N54 DIRECTOR UMH C 80</option>
+						<option value="N54 MED SUP EPIDEMIOLOGO 80">N54 MED SUP EPIDEMIOLOGO 80</option>
+						<option value="N54 MED SUP HOSPITALES 80">N54 MED SUP HOSPITALES 80</option>
+						<option value="N54 MED SUP MED FAM 80">N54 MED SUP MED FAM 80</option>
+						<option value="N54 SUBDIR ADMVO UMH A 80">N54 SUBDIR ADMVO UMH A 80</option>
+						<option value="N54 SUBDIR MED UMH B 80">N54 SUBDIR MED UMH B 80</option>
+						<option value="N55 DIRECTOR UMH B 80">N55 DIRECTOR UMH B 80</option>
+						<option value="N55 DIRECTOR UMH B 80">N55 DIRECTOR UMH B 80</option>
+						<option value="N55 JEFE DEPTO DELEG 4 80">N55 JEFE DEPTO DELEG 4 80</option>
+						<option value="N55 JEFE DIV MED UMAE  80">N55 JEFE DIV MED UMAE  80</option>
+						<option value="N55 SUBD MED UMH A 80">N55 SUBD MED UMH A 80</option>
+						<option value="N56 COOR REG AUX MED D4 80">N56 COOR REG AUX MED D4 80</option>
+						<option value="N56 COORD AUX ATN MED D3 Y D4 80">N56 COORD AUX ATN MED D3 Y D4 80</option>
+						<option value="N56 COORD AUX EST DEL4 80">N56 COORD AUX EST DEL4 80</option>
+						<option value="N56 COORD AUX GEST MED D3YD4 80">N56 COORD AUX GEST MED D3YD4 80</option>
+						<option value="N56 COORD AUX MED EDUCA D3YD4 80">N56 COORD AUX MED EDUCA D3YD4 80</option>
+						<option value="N56 COORD AUX MED EPIDEMIOLOGI D3YD4 80">N56 COORD AUX MED EPIDEMIOLOGI D3YD4 80</option>
+						<option value="N56 COORD AUX MED SAL PUBLICA D3YD4 80">N56 COORD AUX MED SAL PUBLICA D3YD4 80</option>
+						<option value="N56 COORD AUX MED SALUD TRAB D3YD4 80">N56 COORD AUX MED SALUD TRAB D3YD4 80</option>
+						<option value="N56 COORD AUX MED SPPSTIMSS D3YD4 80">N56 COORD AUX MED SPPSTIMSS D3YD4 80</option>
+						<option value="N56 DIRECTOR UMH A 80">N56 DIRECTOR UMH A 80</option>
+						<option value="N56 MED SUP LIDER 80">N56 MED SUP LIDER 80</option>
+						<option value="N57 COOR CLIN TUR UMAE 80">N57 COOR CLIN TUR UMAE 80</option>
+						<option value="N58 COORDINADOR(A) GEST MEDICA D3 Y D4">N58 COORDINADOR(A) GEST MEDICA D3 Y D4</option>
+						<option value="N58 COORDINADOR(A) INF AN EST D3 Y D4">N58 COORDINADOR(A) INF AN EST D3 Y D4</option>
+						<option value="N58 COORDINADOR(A) PLAN ENL INST D3 Y D4">N58 COORDINADOR(A) PLAN ENL INST D3 Y D4</option>
+						<option value="N58 COORDINADOR(A) SALUD TRAB D3 Y D4">N58 COORDINADOR(A) SALUD TRAB D3 Y D4</option>
+						<option value="N58 DIR ED INV SA UMAE 80">N58 DIR ED INV SA UMAE 80</option>
+						<option value="N59 COORDINADOR(A) PREV ATN SAL D3 Y D4">N59 COORDINADOR(A) PREV ATN SAL D3 Y D4</option>
+						<option value="N60 DIRECTOR UC UMAE 80">N60 DIRECTOR UC UMAE 80</option>
+						<option value="N62 JEFE AREA MEDICA  80">N62 JEFE AREA MEDICA  80</option>
+						<option value="N62 JEFE(A) SERVS PREST MEDICAS D3 Y D4">N62 JEFE(A) SERVS PREST MEDICAS D3 Y D4</option>
+						<option value="N63 DIR ADMVO UMAE 80">N63 DIR ADMVO UMAE 80</option>
+						<option value="N63 DIRECTOR MED UMAE 80">N63 DIRECTOR MED UMAE 80</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="adscripcion">Adscripción</label>
+					<select name="adscripcion" id="">
+						<option value="ALMACEN DELEGACIONAL">ALMACEN DELEGACIONAL</option>
+						<option value="BANCO DE SANGRE">BANCO DE SANGRE</option>
+						<option value="CAO">CAO</option>
+						<option value="CENTRAL DE SERVICIOS">CENTRAL DE SERVICIOS</option>
+						<option value="CENTRO COMUNITARIO DE SALUD MENTAL">CENTRO COMUNITARIO DE SALUD MENTAL</option>
+						<option value="CENTRO DE CANJE">CENTRO DE CANJE</option>
+						<option value="CENTRO DE CAPACITACION Y CALIDAD JALISCO">CENTRO DE CAPACITACION Y CALIDAD JALISCO</option>
+						<option value="CENTRO DE SEGURIDAD LAGOS D EMORENO">CENTRO DE SEGURIDAD LAGOS DE MORENO</option>
+						<option value="CENTRO DE SEGURIDAD SOCIAL CD.GUZMAN">CENTRO DE SEGURIDAD SOCIAL CD.GUZMAN</option>
+						<option value="CENTRO DE SEGURIDAD SOCIAL GUADALAJARA">CENTRO DE SEGURIDAD SOCIAL GUADALAJARA</option>
+						<option value="CENTRO DE SEGURIDAD SOCIAL OCOTLAN">CENTRO DE SEGURIDAD SOCIAL OCOTLAN</option>
+						<option value="CENTRO DE SIMULACION">CENTRO DE SIMULACION</option>
+						<option value="CIBO">CIBO</option>
+						<option value="CLINICA DE MAMA">CLINICA DE MAMA</option>
+						<option value="DELEGACION JALISCO">DELEGACION JALISCO</option>
+						<option value="ESCUELA ENFERMERÍA">ESCUELA ENFERMERÍA</option>
+						<option value="GUARDERIA 01">GUARDERIA 01</option>
+						<option value="GUARDERIA 02">GUARDERIA 02</option>
+						<option value="GUARDERIA 03">GUARDERIA 03</option>
+						<option value="GUARDERIA 04">GUARDERIA 04</option>
+						<option value="GUARDERIA 05">GUARDERIA 05</option>
+						<option value="HGR 045">HGR 045</option>
+						<option value="HGR 046">HGR 046</option>
+						<option value="HGR 110">HGR 110</option>
+						<option value="HGR 180">HGR 180</option>
+						<option value="HGsZ 015 TAMAZULA">HGsZ 015 TAMAZULA</option>
+						<option value="HGsZ 027 VILLACORONA">HGsZ 027 VILLACORONA</option>
+						<option value="HGsZ 028 CASIMIRO CASTILLO">HGsZ 028 CASIMIRO CASTILLO</option>
+						<option value="HGZ 006 OCOTLAN">HGZ 006 OCOTLAN</option>
+						<option value="HGZ 007 LAGOS DE MORENO">HGZ 007 LAGOS DE MORENO</option>
+						<option value="HGZ 009 CD. GUZMAN">HGZ 009 CD. GUZMAN</option>
+						<option value="HGZ 014">HGZ 014</option>
+						<option value="HGZ 020 AUTLAN DE NAVARRO">HGZ 020 AUTLAN DE NAVARRO</option>
+						<option value="HGZ 021 TEPATITLAN DE MORELOS">HGZ 021 TEPATITLAN DE MORELOS</option>
+						<option value="HGZ 026 TALA">HGZ 026 TALA</option>
+						<option value="HGZ 042 PUERTO VALLARTA">HGZ 042 PUERTO VALLARTA</option>
+						<option value="HGZ 089">HGZ 089</option>
+						<option value="HOSPITAL ESPECIALIDADES">HOSPITAL ESPECIALIDADES</option>
+						<option value="HOSPITAL GINECO-OBSTETRICIA">HOSPITAL GINECO-OBSTETRICIA</option>
+						<option value="HOSPITAL JUAN I. MENCHACA">HOSPITAL JUAN I. MENCHACA</option>
+						<option value="HOSPITAL PEDIATRIA">HOSPITAL PEDIATRIA</option>
+						<option value="LARRE">LARRE</option>
+						<option value="OFNA AUX 120">OFNA AUX 120</option>
+						<option value="OFNA AUX 139 GUACHINANGO">OFNA AUX 139 GUACHINANGO</option>
+						<option value="OFNA AUX 142 MIXTLAN">OFNA AUX 142 MIXTLAN</option>
+						<option value="OFNA AUX 143 SAN MARCOS">OFNA AUX 143 SAN MARCOS</option>
+						<option value="OFNA AUX 147 ATEMAJAC DE BRIZUELA">OFNA AUX 147 ATEMAJAC DE BRIZUELA</option>
+						<option value="OFNA AUX 150">OFNA AUX 150</option>
+						<option value="OFNA AUX TALA">OFNA AUX TALA</option>
+						<option value="PATOLOGIA CLINICA">PATOLOGIA CLINICA</option>
+						<option value="PLANTA CENTRAL DE LAVADO">PLANTA CENTRAL DE LAVADO</option>
+						<option value="PUESTO DE ENFERMERIA 122 CUATITLAN">PUESTO DE ENFERMERIA 122 CUATITLAN</option>
+						<option value="PUESTO DE ENFERMERIA 125 EL LIMON">PUESTO DE ENFERMERIA 125 EL LIMON</option>
+						<option value="PUESTO DE ENFERMERIA 127 TONAYA">PUESTO DE ENFERMERIA 127 TONAYA</option>
+						<option value="PUESTO DE ENFERMERIA 130 OJUELOS">PUESTO DE ENFERMERIA 130 OJUELOS</option>
+						<option value="PUESTO DE ENFERMERIA 132 SAN JUAN">PUESTO DE ENFERMERIA 132 SAN JUAN</option>
+						<option value="PUESTO DE ENFERMERIA 133 UNION DE SAN ANTONIO">PUESTO DE ENFERMERIA 133 UNION DE SAN ANTONIO</option>
+						<option value="PUESTO DE ENFERMERIA 134 VALLE DE GUADALUPE">PUESTO DE ENFERMERIA 134 VALLE DE GUADALUPE</option>
+						<option value="PUESTO DE ENFERMERIA 135 VILLA HIDALGO">PUESTO D EENFERMERIA 135 VILLA HIDALGO</option>
+						<option value="PUESTO DE ENFERMERIA 136 CAÑADAS DE OBREGON">PUESTO DE ENFERMERIA 136 CAÑADAS DE OBREGON</option>
+						<option value="PUESTO DE ENFERMERIA 152 JUCHITLAN">PUESTO DE ENFERMERIA 152 JUCHITLAN</option>
+						<option value="PUESTO DE ENFERMERIA 154 TENAMAXTLAN">PUESTO DE ENFERMERIA 154 TENAMAXTLAN</option>
+						<option value="PUESTO DE ENFERMERIA 155 TIZAPAN">PUESTO DE ENFERMERIA 155 TIZAPAN</option>
+						<option value="PUESTO DE ENFERMERIA HOSTOTIPAQUILLO">PUESTO DE ENFERMERIA HOSTOTIPAQUILLO</option>
+						<option value="PUESTO ENFERMERIA 144 SAN SEBASTIAN DEL OESTE">PUESTO ENFERMERIA 144 SAN SEBASTIAN DEL OESTE</option>
+						<option value="PUESTO ENFERMERIA 180 TOLIMAN">PUESTO ENFERMERIA 180 TOLIMAN</option>
+						<option value="SUBDELEGACION CD. GUZMAN">SUBDELEGACION CD. GUZMAN</option>
+						<option value="SUBDELEGACION HIDALGO">SUBDELEGACION HIDALGO</option>
+						<option value="SUBDELEGACION JUAREZ">SUBDELEGACION JUAREZ</option>
+						<option value="SUBDELEGACION LAGOS DE MORENO">SUBDELEGACION LAGOS DE MORENO</option>
+						<option value="SUBDELEGACION OCOTLAN">SUBDELEGACION OCOTLAN</option>
+						<option value="SUBDELEGACION PUERTO VALLARTA">SUBDELEGACION PUERTO VALLARTA</option>
+						<option value="SUBDELEGACION REFORMA LIBERTAD">SUBDELEGACION REFORMA LIBERTAD</option>
+						<option value="SUBDELEGACION TEPATITLAN DE MORELOS">SUBDELEGACION TEPATITLAN DE MORELOS</option>
+						<option value="TELECOMUNICACIONES">TELECOMUNICACIONES</option>
+						<option value="TIENDA CAMPESINO">TIENDA CAMPESINO</option>
+						<option value="TIENDA CD. GUZMAN">TIENDA CD. GUZMAN</option>
+						<option value="TIENDA CENTRO MEDICO">TIENDA CENTRO MEDICO</option>
+						<option value="TRANSPORTES">TRANSPORTES</option>
+						<option value="UMF 001">UMF 001</option>
+						<option value="UMF 002">UMF 002</option>
+						<option value="UMF 003">UMF 003</option>
+						<option value="UMF 004">UMF 004</option>
+						<option value="UMF 005 EL SALTO">UMF 005 EL SALTO</option>
+						<option value="UMF 008">UMF 008</option>
+						<option value="UMF 010 TEQUILA">UMF 010 TEQUILA</option>
+						<option value="UMF 011 AMATITAN">UMF 011 AMATITAN</option>
+						<option value="UMF 012 ARENAL">UMF 012 ARENAL</option>
+						<option value="UMF 013 PIHUAMO">UMF 013 PIHUAMO</option>
+						<option value="UMF 016 TECALITLAN">UMF 016 TECALITLAN</option>
+						<option value="UMF 017 ATENQUIQUE">UMF 017 ATENQUIQUE</option>
+						<option value="UMF 018 ZAPOTILTIC">UMF 018 ZAPOTILTIC</option>
+						<option value="UMF 019 TUXPAN">UMF 019 TUXPAN</option>
+						<option value="UMF 022 ATOTONILCO">UMF 022 ATOTONILCO</option>
+						<option value="UMF 023 LABARCA">UMF 023 LABARCA</option>
+						<option value="UMF 024 AMECA">UMF 024 AMECA</option>
+						<option value="UMF 025 LAS AUCEDA">UMF 025 LAS AUCEDA</option>
+						<option value="UMF 029 ESTIPAC">UMF 029 ESTIPAC</option>
+						<option value="UMF 030 BELLAVISTA">UMF 030 BELLAVISTA</option>
+						<option value="UMF 031 AHUALULCO DEL MERCADO">UMF 031 AHUALULCO DEL MERCADO</option>
+						<option value="UMF 033 SAN MARCOS">UMF 033 SAN MARCOS</option>
+						<option value="UMF 034">UMF 034</option>
+						<option value="UMF 035 VISTA HERMOSA">UMF 035 VISTA HERMOSA</option>
+						<option value="UMF 036 LA GARITA">UMF 036 LA GARITA</option>
+						<option value="UMF 038 BUENA VISTA">UMF 038 BUENA VISTA</option>
+						<option value="UMF 039">UMF 039</option>
+						<option value="UMF 040 CHAPALA">UMF 040 CHAPALA</option>
+						<option value="UMF 041 SAN JUAN DE LOS LAGOS">UMF 041 SAN JUAN DE LOS LAGOS</option>
+						<option value="UMF 043 TOMATLAN">UMF 043 TOMATLAN</option>
+						<option value="UMF 044 ARANDAS">UMF 044 ARANDAS</option>
+						<option value="UMF 047 ZAPOTLANEJO">UMF 047 ZAPOTLANEJO</option>
+						<option value="UMF 048">UMF 048</option>
+						<option value="UMF 049">UMF 049</option>
+						<option value="UMF 050 ATOTONILQUILLO">UMF 050 ATOTONILQUILLO</option>
+						<option value="UMF 051">UMF 051</option>
+						<option value="UMF 052">UMF 052</option>
+						<option value="UMF 053">UMF 053</option>
+						<option value="UMF 054">UMF 054</option>
+						<option value="UMF 055">UMF 055</option>
+						<option value="UMF 056 ACATLAN DE JUAREZ">UMF 056 ACATLAN DE JUAREZ</option>
+						<option value="UMF 057 IXTLAHUACAN DEL RIO">UMF 057 IXTLAHUACAN DEL RIO</option>
+						<option value="UMF 058 JOCOTEPEC">UMF 058 JOCOTEPEC</option>
+						<option value="UMF 059">UMF 059</option>
+						<option value="UMF 060 COLOTLAN">UMF 060 COLOTLAN</option>
+						<option value="UMF 061 MAZAMITLA">UMF 061 MAZAMITLA</option>
+						<option value="UMF 062 SAYULA">UMF 062 SAYULA</option>
+						<option value="UMF 063 SAN GABRIEL">UMF 063 SAN GABRIEL</option>
+						<option value="UMF 064 TAPALPA">UMF 064 TAPALPA</option>
+						<option value="UMF 065 TECHALUTA">UMF 065 TECHALUTA</option>
+						<option value="UMF 066 AYOTLAN">UMF 066 AYOTLAN</option>
+						<option value="UMF 067 TOTOTLAN">UMF 067 TOTOTLAN</option>
+						<option value="UMF 068 BOLAÑOS">UMF 068 BOLAÑOS</option>
+						<option value="UMF 069 ETZATLAN">UMF 069 ETZATLAN</option>
+						<option value="UMF 070 CAREYES">UMF 070 CAREYES</option>
+						<option value="UMF 071 AYUTLA">UMF 071 AYUTLA</option>
+						<option value="UMF 072 COCULA">UMF 072 COCULA</option>
+						<option value="UMF 073 SAN MARTIN HIDALGO">UMF 073 SAN MARTIN HIDALGO</option>
+						<option value="UMF 074 TALPA DE ALLENDE">UMF 074 TALPA DE ALLENDE</option>
+						<option value="UMF 075 TECOLOTLAN">UMF 075 TECOLOTLAN</option>
+						<option value="UMF 076 TEOCUITATLAN">UMF 076 TEOCUITATLAN</option>
+						<option value="UMF 077ZACOALCO DE TORRES">UM F077ZACOALCO DE TORRES</option>
+						<option value="UMF 078">UMF 078</option>
+						<option value="UMF 079">UMF 079</option>
+						<option value="UMF 080 CIHUATLAN">UMF 080 CIHUATLAN</option>
+						<option value="UMF 081 EL GRULLO">UMF 081 EL GRULLO</option>
+						<option value="UMF 083 LA HUERTA">UMF 083 LA HUERTA</option>
+						<option value="UMF 084 ENCARNACION DE DIAZ">UMF 084 ENCARNACION DE DIAZ</option>
+						<option value="UMF 085 JALOSTOTITLAN">UMF 085 JALOSTOTITLAN</option>
+						<option value="UMF 087 TEOCALTICHE">UMF 087 TEOCALTICHE</option>
+						<option value="UMF 088">UMF 088</option>
+						<option value="UMF 091">UMF 091</option>
+						<option value="UMF 092">UMF 092</option>
+						<option value="UMF 093">UMF 093</option>
+						<option value="UMF 094 YAHUALICA">UMF 094 YAHUALICA</option>
+						<option value="UMF 095 PONCITLAN">UMF 095 PONCITLAN</option>
+						<option value="UMF 096 MASCOTA">UMF 096 MASCOTA</option>
+						<option value="UMF 097 MAGDALENA">UMF 097 MAGDALENA</option>
+						<option value="UMF 098 TEUCHITLAN">UMF 098 TEUCHITLAN</option>
+						<option value="UMF 100 JAMAY">UMF 100 JAMAY</option>
+						<option value="UMF 106 SAN MARTIN BOLAÑOS">UMF 106 SAN MARTIN BOLAÑOS</option>
+						<option value="UMF 114 GOMEZ FARIAS">UMF 114 GOMEZ FARIAS</option>
+						<option value="UMF 128 ACATIC">UMF  128 ACATIC</option>
+						<option value="UMF 131 SAN DIEGO DE ALEJANDRIA">UMF 131 SAN DIEGO DE ALEJANDRIA</option>
+						<option value="UMF 137 SAN JUANITO ESCOBEDO">UMF 137 SAN JUANITO ESCOBEDO</option>
+						<option value="UMF 159 JESUS MARIA">UMF 159 JESUS MARIA</option>
+						<option value="UMF 160 CAPILLA DE GUADALUPE">UMF 160 CAPILLA DE GUADALUPE</option>
+						<option value="UMF 162 MELAQUE">UMF 162 MELAQUE</option>
+						<option value="UMF 165 DEGOLLADO">UMF 165 DEGOLLADO</option>
+						<option value="UMF 167">UMF167</option>
+						<option value="UMF 168 TEPATITLAN DE MORELOS">UMF 168 TEPATITLAN DE MORELOS</option>
+						<option value="UMF 169 OCOTLAN">UMF 169 OCOTLAN</option>
+						<option value="UMF 170 PUERTO VALLARTA">UMF 170 PUERTO VALLARTA</option>
+						<option value="UMF 171">UMF 171</option>
+						<option value="UMF 177 LAGOS DE MORENO">UMF 177 LAGOS DE MORENO</option>
+						<option value="UMF 178">UMF 178</option>
+						<option value="UMF 179 PUERTO VALLARTA">UMF 179 PUERTO VALLARTA</option>
+						<option value="UMF 181 IXTLAHUACAN DE LOS MEMBRILLOS">UMF 181 IXTLAHUACAN DE LOS MEMBRILLOS</option>
+						<option value="UMF 182">UMF 182</option>
+						<option value="UMF 183 SAN IGNACIO CERROGORDO">UMF 183 SAN IGNACIO CERROGORDO</option>
+						<option value="UMF 184">UMF 184</option>
+						<option value="VELATORIO">VELATORIO</option>
+						 
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="turno">Turno</label>
+					<select name="turno" id="">
+						<option value="MATUTINO">MATUTINO</option>
+						<option value="VESPERTINO">VESPERTINO</option>
+						<option value="NOCTURNO">NOCTURNO</option>
+						<option value="JORNADA ACUMULADA">JORNADA ACUMULADA</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="t_contr">Tipo de Contratación</label>
+					<select name="t_contr" id="">
+						<option value="02">02</option>
+						<option value="BASE">BASE</option>
+						<option value="INTERINO">INTERINO</option>
+						<option value="08 EVENTUAL">08 EVENTUAL</option>
+						<option value="CONFIANZA B">CONFIANZA B</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="f_ingr">Fecha de Ingreso</label>
+					<input type="date" name="f_ingr" >
+				</div>
+				<div class="form-group">
+					<label for="antiguedad">Antiguedad</label>
+					<input type="text" name="antiguedad" placeholder="anios/quincenas/días">
+				</div>
+			</div>	
+		</div>
+		<p><input type="submit" value="Guardar" class="btn btn-primary"></p>
+	</form>
+</div>
+
+
+
+		
+		    
+{% endblock %}

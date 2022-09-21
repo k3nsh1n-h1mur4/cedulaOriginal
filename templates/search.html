@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+
+{% block content %}
+
+	{{ error }}
+
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col">
+				<form action="" method="GET">
+					<div class="form-group">
+						<label for="matricula">Matrícula</label>
+						<input type="text" name="q" class="form-control" id="">
+					</div>
+
+					<input type="submit" value="Buscar" class="btn btn-primary">
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col">
+				{% if result %}
+					<table class="table">
+						  <thead>
+						    <tr>
+						      <th scope="col">ID</th>
+						      <th scope="col">Apellido Paterno</th>
+						      <th scope="col">Apellido Materno</th>
+						      <th scope="col">Nombre(s)</th>
+						      <th scope="col">Matrícula</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">{{ result['id'] }}</th>	
+						      <th scope="row">{{ result['app'] }}</th>
+						      <td>{{ result['apm'] }}</td>
+						      <td>{{ result['name'] }}</td>
+						      <td>{{ result['matricula'] }}</td>
+						      <td><a href="{{ url_for('create_cedula', id=result['id']) }}" class="btn btn-warning">Generar PDF</a> </td>
+						    </tr>
+
+				{% endif %}
+			</div>
+		</div>
+	</div>	
+
+{% endblock %}

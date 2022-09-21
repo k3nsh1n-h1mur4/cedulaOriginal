@@ -1,0 +1,69 @@
+<!-- <!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>crea_pdf</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+	<div class="title">
+		<div>
+			<img src="file:///C|/Users/jazyi/flask-projects/cedulaOriginal/static/sntsslogo.png" alt="sntsslogo" width="120" height="120">
+		</div>
+		<div class="t"></div>
+	</div> -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5" style="text-align: center;">
+    <h4>Datos Personales</h4>
+	<div class="datospersonales" style="border:1px solid; padding:10px; border-radius: 10px; margin-top: 30px; text-align: justify;">
+		Nombre: ___________________________________________________________________________________________________________________
+		<p style="margin-left: 100px"><span>Apellido Paterno</span><span style="margin-left:50px;">Apellido Materno</span><span style="margin-left:50px;">Nombre</span></p>
+		
+		<p><span>___________________________________</span><span style="margin-left:50px">____________________________________</span><span style="margin-left:50px;"">____________________________________</span> </p>
+        <p style="line-height:0px;"><span>Calle y No. Exterior y/o Interior</span><span style="margin-left:200px;">Colonia</span><span style="margin-left:150px">Alcaldia y/o Municipio</span> </p>
+
+        <p style="line-height:40px;"><span>______________</span><span style="margin-left:80px;">___________________</span><span style="margin-left:80px;">_____________________</span><span style="margin-left:80px;">________________________</span> </p>
+        <p style="line-height:0px;"><span style="">Código Postal</span><span style="margin-left:120px;">Localidad</span><span style="margin-left:150px;">Tel-Celular</span><span style="margin-left:100px;">Correo Electrónico</span> </p>
+
+        <p style="line-height:40px;">Nacimiento: ________________________   <span style="margin-left:100px;">Fecha __________________</span></p>
+        <p style="line-height:0px;"><span style="margin-left:100px;">Lugar</span><span style="margin-left:300px;">Día/Mes/Año</span></p>
+
+        <p style="line-height:40px;"><span> _______________________________</span><span style="margin-left:50px;">___________________________</span><span style="margin-left:50px;">____________________________</span></p>
+        <p><span style="margin-left:30px;">Número de Seguro Social</span><span style="margin-left:130px;">RFC</span><span style="margin-left:150px;">CURP</span></p>
+
+        <p style="line-height:40px;"><span>________________________________</span><span style="margin-left:150px;">______________________________________</span></p>
+        <p><span style="margin-left:80px;">Estado Civil</span><span style="margin-left:350px;">SEXO</span></p>
+	</div>
+    <div class="container mt-5">
+        <h4>DATOS LABORALES</h4>
+        <div class="datoslaborales">
+            <p><span>_______________________</span><span>_______________________</span> <span>______________________</span> <span>__________________________</span></p>
+            <p><span>Matrícula</span><span>Categoría</span><span>Adscripción</span><span>Turno</span></p>
+            
+            <p><span>________________</span><span>_______________________</span><span>____________________</span></p>
+            <p><span>Tipo de Contratación</span><span>Fecha Ingreso al IMSS</span><span>Años/Quincenas/Días</span></p>
+        </div>
+    </div>
+</div>
+    <div class="container mt-3">
+        <div class="container1" >
+            <div class="container2" >
+                <p>Declaro con fundamento en lo dispuesto en el Artículo 358 fracción I de la Ley Federal de Trabajo, por así convenir a mis</p>
+                <p>intereses, que es mi deseo afiliarme al Sindicato Nacional de Trabajadores del Seguro Social, manifestando desde este momento</p>
+                <p>que conozco los estatutos sindicales que rigen la vida interna de dicha organización y es mi voluntad acatarlos. Autorizando</p>
+                <p>expresamente que el Instituto Mexicano del Seguro Social, entere a favor del Sindicato Nacional de Trabajadores del Seguro</p>
+                <p>Social (S.N.T.S.S.) la couta sindical corespondiente y aportaciones, a través del descuento directo que se realice a mi salario, en</p>
+                <p>los términos y plazos que así lo disponga el estatuto interno de dicha organización y con fundamento en lo dispuesto por el</p>
+                <p>artícula 110 fracción VI de la Ley Federal de Trabajo</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

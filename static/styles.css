@@ -1,0 +1,73 @@
+.title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color:  white;
+    background-color: rgb(121, 27, 6);
+    text-align: center;
+}
+
+.title p{
+    font-size: 10px;
+    text-align: center;
+    line-height: 0.1px;
+}
+
+.title > img-container {
+    width: 10px;
+}
+
+.main-title {
+    padding: 50px;
+}
+
+
+.first {
+    padding: 5px;
+    border: 1px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: lightgrey;
+}
+
+
+.second {
+    padding: 5px 5px;
+    background-color: lightgrey;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.datoslaborales {
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.container1 {
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.container2 {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.container {
+    text-align: center;
+}
+.container2 p{
+    font-size:8px;
+    line-height:0;
+}
+
+#error {
+    background-color: red;
+}
+
+.listCat {
+    font-size: 9px;
+}

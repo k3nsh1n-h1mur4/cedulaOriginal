@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block title %}
+	{{ title }}
+{% endblock %}
+
+
+
+{% block content %}
+	<div class="container mt-5" id="error">
+		<div class="row">
+			<div class="col">
+				{% if error %}
+					{{ error }}
+			     {% endif %}	
+					
+			</div>
+		</div>
+	</div>
+{% endblock %}
