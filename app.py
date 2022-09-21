@@ -34,7 +34,7 @@ WTTF_CSRF_SECRET_KEY = os.urandom(16)
 
 def getConnection():
     try:
-        conn = connect("dbname=cedulasdb2022 user=postgres password=Z4dk13l2017** port=5432")
+        conn = connect("dbname= user= password= port=5432")
         print('Conectado')
         return conn
     except:
